@@ -2,7 +2,7 @@
 
 TSDF++ is a novel multi-object TSDF formulation that can encode multiple object surfaces at each voxel. In a multiple dynamic object tracking and reconstruction scenario, a TSDF++ map representation allows maintaining accurate reconstruction of surfaces even while they become temporarily occluded by other objects moving in their proximity. At the same time, the representation allows maintaining a single volume for the entire scene and all the objects therein, thus solving the fundamental challenge of scalability with respect to the number of objects in the scene and removing the need for an explicit occlusion handling strategy.
 
-## Citing 
+## Citing
 
 When using **TSDF++** in your research, please cite the following publication:
 
@@ -22,11 +22,11 @@ Margarita Grinvald, Federico Tombari, Roland Siegwart, and Juan Nieto, **TSDF++:
 The installation has been tested on Ubuntu 16.04 and Ubutnu 20.04.
 
 ### Requirements
-- ROS 
+- ROS
 - C++14 for [PCL 1.10](https://github.com/PointCloudLibrary/pcl)
 
 ### Install dependencies
-Install ROS following the instructions at the [ROS installation page](http://wiki.ros.org/ROS/Installation). The full install (`ros-kinetic-desktop-full`, `ros-melodic-desktop-full`) are recommended. 
+Install ROS following the instructions at the [ROS installation page](http://wiki.ros.org/ROS/Installation). The full install (`ros-kinetic-desktop-full`, `ros-melodic-desktop-full`) are recommended.
 
 Make sure to source your ROS _setup.bash_ script by following the instructions on the ROS installation page.
 
@@ -42,7 +42,7 @@ If you don't have a [catkin](http://wiki.ros.org/catkin) workspace yet, create a
 ```bash
 mkdir -p $CATKIN_WS/src && cd $CATKIN_WS
 catkin init
-catkin config --extend /opt/ros/$ROS_VERSION --merge-devel 
+catkin config --extend /opt/ros/$ROS_VERSION --merge-devel
 catkin config --cmake-args -DCMAKE_CXX_STANDARD=14 -DCMAKE_BUILD_TYPE=Release
 wstool init src
 ```
@@ -69,6 +69,11 @@ catkin build tsdf_plusplus_ros rgbd_segmentation mask_rcnn_ros cloud_segmentatio
 source ../devel/setup.bash # (bash shell: ../devel/setup.bash,  zsh shell: ../devel/setup.zsh)
 ```
 
+# Installation for ROS2
+
+```bash
+colcon build --packages-up-to tsdf_plusplus_lib_ros2
+```
 
 ## Troubleshooting
 ### Compilation freeze
