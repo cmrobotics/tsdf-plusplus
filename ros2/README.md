@@ -1,0 +1,2 @@
+colcon build --symlink-install --packages-up-to voxblox && colcon test  --packages-select voxblox && cat log/latest/voxblox/stdout.log
+colcon build --symlink-install --packages-up-to tsdf_plusplus_lib_ros2
