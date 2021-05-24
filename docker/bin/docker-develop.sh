@@ -11,9 +11,13 @@ if [ -z "$2" ]
     mode="it"
 fi
 docker container run --rm -$mode \
-  --user $(id -u) \
   --mount type=bind,source="${workspace_folder}",target=/home/ros/catkin_ws \
-  --name tsdf-plusplus-dev \
-  --workdir /home/ros/catkin_ws \
-  tsdf-plusplus-ros-base:v0.1 \
+  --name tsdf-plusplus-desktop \
+  --net=host \
+  --env="DISPLAY" \
+  --volume="$HOME/.Xauthority:/home/ros/.Xauthority:rw" \
+  tsdf-plusplus-ros-desktop:v0.1 \
   bash
+
+#--user $(id -u) \
+#--workdir /home/ros \

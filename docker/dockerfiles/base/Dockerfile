@@ -8,13 +8,10 @@ ARG GROUP_ID
 RUN apt update -y
 RUN apt upgrade -y
 RUN apt install -y build-essential tree vim \
-    git sudo python-pip ros-melodic-catkin \
+    git sudo python-pip telnet supervisor \
     autoconf libtool python-catkin-tools \
-    ros-melodic-eigen-conversions \
-    ros-melodic-pcl-ros ros-melodic-image-transport \
-    ros-melodic-codec-image-transport ros-melodic-pcl-msgs \
-    ros-melodic-pcl-conversions ros-melodic-cv-bridge \
-    ros-melodic-tf-conversions ros-melodic-rviz && \
+    ros-melodic-desktop-full \
+    curl wget procps net-tools && \
     rm -rf /var/lib/apt/lists/* && \
     apt clean && \
     apt autoclean
