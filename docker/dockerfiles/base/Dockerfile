@@ -1,4 +1,3 @@
-#FROM ros:melodic-ros-core
 FROM nvidia/cuda:11.3.0-cudnn8-runtime-ubuntu18.04
 ENV DEBIAN_FRONTEND=noninteractive
 
