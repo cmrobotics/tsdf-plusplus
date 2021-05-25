@@ -81,3 +81,8 @@ catkin build -j$(($(nproc) / 2)) -l1 tsdf_plusplus_ros rgbd_segmentation mask_rc
 
 By doing so, the docker machine will build the sources on your computer and
 keep the binaries on your computer as well.
+
+
+## User Guide
+
+To get `tsdf-plusplus` running you can check [the user guide](doc/USER_GUIDE.md).

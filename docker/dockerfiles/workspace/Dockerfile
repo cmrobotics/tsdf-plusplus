@@ -13,3 +13,6 @@ RUN bash -c 'source /opt/ros/melodic/setup.bash && \
     catkin config --extend /opt/ros/melodic --merge-devel && \
     catkin config --cmake-args -DCMAKE_CXX_STANDARD=14 -DCMAKE_BUILD_TYPE=Release && \
     wstool init src'
+
+RUN mkdir /home/ros/catkin_ws/rviz
+COPY rviz/asl-dataset.rviz /home/ros/catkin_ws/rviz/asl-dataset.rviz
