@@ -1,8 +1,8 @@
 # Building image and running container
 
-To build the docker image run:
+To build the docker images run:
 ```bash
-./bin/build-ros-image.sh
+./bin/build-ros-images.sh
 ```
 
 To run the docker image use:
@@ -16,11 +16,11 @@ To run the docker image use:
 
 To get the a local development environment up and running quickly using docker run:
 ```bash
-./bin/build-ros-image.sh
+./bin/build-ros-images.sh
 ./bin/set-me-up.sh
 ```
 
-You can skip running `./bin/build-ros-image.sh` if the image is already built.
+You can skip running `./bin/build-ros-images.sh` if the images are already built.
 
 The `./bin/set-me-up.sh` script will do the following:
 - Run a docker container
@@ -42,8 +42,23 @@ git remote show origin
 ## Use computer workspace on docker
 
 If you have your workspace locally and want to use the docker machine to build
-and/or run nodes, you can use the script `./bin/docker-develop.sh`.
+and/or run nodes, you can use the script:
+```bash
+./bin/docker-develop.sh <ABSOLUTE_PATH_OF_CATKIN_WS>
+```
 You can get such workspace locally following the previous section.
+
+If you have `docker-nvidia` as well as an `nVidia` card you can run a full
+desktop by running:
+```bash
+./bin/docker-develop.sh <ABSOLUTE_PATH_OF_CATKIN_WS> docker-nvidia
+```
+and then **inside the running container bash terminal** run:
+```bash
+/usr/bin/lxpanel --profile LXDE
+````
+This will allow you to use `gazebo` as well as `rviz`. docker-nvidia will as well as using directly the `nVidia` card.
+
 
 This script will discard the workspace from the remote repository and instead
 use the worksapce you have locally on your computer, which will be mounted
