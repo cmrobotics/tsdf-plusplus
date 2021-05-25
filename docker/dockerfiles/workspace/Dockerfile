@@ -15,4 +15,4 @@ RUN bash -c 'source /opt/ros/melodic/setup.bash && \
     wstool init src'
 
 RUN mkdir /home/ros/catkin_ws/rviz
-COPY rviz/asl-dataset.rviz /home/ros/catkin_ws/rviz/asl-dataset.rviz
+COPY asl-dataset.rviz /home/ros/catkin_ws/rviz
